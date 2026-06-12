@@ -1,0 +1,75 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/LibraryAppTest.java",
+      "testCases": [
+        {
+          "methodName": "AuthorDAO_getAllAuthorsTest",
+          "label": "Verifying getAllAuthors functionality",
+          "description": "Verifies that getAllAuthors() method returns a list of known authors."
+        },
+        {
+          "methodName": "AuthorDAO_insertAuthorCheckWithGetAllTest",
+          "label": "Verifying insert and getAllAuthors functionality",
+          "description": "Verifies that getAllAuthors() method returns a newly inserted author."
+        },
+        {
+          "methodName": "AuthorService_getAllAuthorsServiceTest",
+          "label": "Verifies AuthorService getAllAuthors() method calls the getAllAuthors() Dao method",
+          "description": "Verifies that AuthorService correctly calls the getAllAuthors method on DAO object"
+        },
+        {
+          "methodName": "AuthorService_addAuthorTest",
+          "label": "Verifies addAuthor service method correctly calls Dao method and returns added object",
+          "description": "Verifies when addAuthor is called and the Dao does not yet contain some author, the method should return the added author, and the insertAuthor method of authorDAO should have been called at some point."
+        },
+        {
+          "methodName": "getAllBooksTest",
+          "label": "Verifies getAllBooks returns all books",
+          "description": "Verifies getAllBooks method on bookDao returns a list of books."
+        },
+        {
+          "methodName": "BookDAO_getBookByIsbnTest",
+          "label": "Verifies getBookByIsbn returns a known Book object",
+          "description": "Verifies getBookByIsbn() method returns a known Book object."
+        },
+        {
+          "methodName": "BookDAO_insertBookCheckWithGetAllTest",
+          "label": "Verifies Inserting a book and getting all books",
+          "description": "Verifies that inserting a book persists and is returned when called the getAllBooks() method after adding."
+        },
+        {
+          "methodName": "BookDAO_insertBookCheckWithGetByIdTest",
+          "label": "Verifies Inserting a book and getting a single book by Isbn",
+          "description": "Verifies that inserting a book persists and is returned when calling the getBookByIsbn() method after adding."
+        },
+        {
+          "methodName": "BookDAO_getBooksWithBookCountOverZeroTest",
+          "label": "Verifies functionality of getBooksWithBookCountOverZero() method",
+          "description": "Verifies that getBooksWithBookCountOverZero() method should retrieve all books with copies_available over 0, but should not return any other books."
+        },
+        {
+          "methodName": "bookService_getAllBooksTest1",
+          "label": "Verifies getAllBooks service method calls Dao method",
+          "description": "Verifies logic of getAllBooks service method by checking that the corresponding getAllBooks Dao method is called."
+        },
+        {
+          "methodName": "bookService_addBookVerifyNotNullOnSuccessfulAddTest",
+          "label": "Verifies addBook returns the added book when the book does not exist in database",
+          "description": "Verifies wWhen addBook() service method is called and the database does not contain the book the method should return the added book, and the insertBook method of bookDAO should have been called at some point."
+        },
+        {
+          "methodName": "bookService_addBookVerifyNullOnUnsuccessfulAdd",
+          "label": "Verifies addBook returns null when the book already exists in the database",
+          "description": "Verifies wWhen addBook() service method is called and the database already contain the book the method should return null, and the insertBook method of bookDAO should not have been called."
+        },
+        {
+          "methodName": "setBookService_getAllAvailableBooksTest",
+          "label": "Verifies logic of getAllAvailableBooks() service method",
+          "description": "Verifies When getAllAvailableBooks() service method is called, all books in the database with copies_available over 0 should be returned."
+        }
+      ]
+    }
+  ]
+}
